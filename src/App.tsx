@@ -3,7 +3,7 @@ import React from "react";
 import ListDemo from "./components/list-demo";
 import KeyDemo from "./components/key-demo/key-demo";
 // import Intro from "./components/into";
-import Text from "./components/Text";
+import Text from "./components/text";
 import { introTitle, introContent, keyTitle, keyContent } from "./content";
 
 import "./App.css";
