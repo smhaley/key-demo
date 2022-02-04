@@ -22,15 +22,21 @@ export const introContent: Content[] = [
         img: "https://media.geeksforgeeks.org/wp-content/uploads/20210622175455/diagram2-300x167.PNG",
         subContent: [
           {
-            text: "Element changes cause React to tear down that node and all nodes below",
+            text: "Two Assumptions:",
             subContent: [
               {
-                text: "All child elements are unmounted and remounted on the next render (internal state refresh)",
+                text: "Two elements of different types will produce different trees.",
+              },
+              {
+                text: "The developer can hint at which child elements may be stable across different renders with a key prop.",
               },
             ],
           },
           {
-            text: "Attribute changes on two elements of the same type only update the attribute on the element (props, styles, etc)",
+            text: "Element changes <a> to <div>, <Content/> to <Section/>, etc will cause full rebuild of all nodes below",
+          },
+          {
+            text: "Attribute changes on two elements of the same type only update the attribute on the element",
           },
         ],
       },
@@ -40,7 +46,7 @@ export const introContent: Content[] = [
     text: "Why Use the VDOM?",
     subContent: [
       {
-        text: "Speed. Virtualization does not require constant DOM repaints",
+        text: "Speed. Virtualization does not require constant DOM repaints. Everything happens in memory first.",
       },
     ],
   },
@@ -61,7 +67,7 @@ export const keyContent: Content[] = [
     text: "Lists are are special case for keys in React",
     subContent: [
       {
-        text: "Insertions anywhere in a list but the bottom cause React mutate each item in the entire list",
+        text: "Insertions anywhere in a list but the bottom cause React to mutate each item in the entire list",
       },
       {
         text: "To solve for this, React tracks changes to nodes in a list with a key prop ",
