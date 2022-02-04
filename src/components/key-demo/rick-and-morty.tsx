@@ -69,10 +69,14 @@ const RickAndMorty: React.FC<{ color: string }> = ({ color }) => {
           {keys.map((item) => (
             <button
               key={item}
-              className="container-button"
+              className="paginate-button"
               onClick={() => handlePaginate(item)}
             >{`page ${item}`}</button>
           ))}
+        </div>
+        <div>
+          <b>Cache: </b>
+          {JSON.stringify(Object.values(cache).map((value) => value.name))}
         </div>
       </div>
     </div>

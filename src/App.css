@@ -35,7 +35,14 @@
 .paginate-container {
   display: flex;
   flex-direction: column;
-  margin: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.paginate-button {
+  width: 80px;
+  margin: 5px;;
+  font-size: 1em;
 }
 
 .demo-img {
