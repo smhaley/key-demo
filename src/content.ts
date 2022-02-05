@@ -48,6 +48,7 @@ export const introContent: Content[] = [
       {
         text: "Speed. Virtualization does not require constant DOM repaints. Everything happens in memory first.",
       },
+      {text: 'Simplicity. All DOM changes are grouped into a single render/repaint.'}
     ],
   },
 ];

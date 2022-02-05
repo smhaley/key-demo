@@ -1,5 +1,6 @@
 .demo-container {
   display: flex;
+  flex-wrap: wrap;
 }
 .button-container {
   margin-top: 50px;
@@ -16,16 +17,16 @@
 }
 
 .list-container {
-  margin: 20px;
+  margin: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-size: 1.2rem;
 }
 
 .list-item {
-  width: 150px;
+  width: 180px;
   display: flex;
-  justify-content: space-between;
 }
 
 .title {
@@ -41,7 +42,7 @@
 
 .paginate-button {
   width: 80px;
-  margin: 5px;;
+  margin: 5px;
   font-size: 1em;
 }
 
@@ -65,6 +66,7 @@
 
 .list-demo-container {
   height: 100vh;
+  padding-top: 100px;
 }
 
 .card-container {
@@ -74,5 +76,59 @@
 }
 
 .list-label {
-  font-weight: bold;
+  width: 80px;
+}
+
+.key-item {
+  width: 50%;
+}
+
+.demo-key-container {
+  background-color: rgb(202, 225, 230);
+  padding-top: 50px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  border: 0;
+  margin: 0;
+  border-left: 5px solid black;
+  height: 50px;
+  margin-left: 50px;
+}
+
+.diag-line {
+  border: 0;
+  margin: 0;
+  border-left: 5px solid black;
+  height: 110px;
+  margin-left: 50px;
+  transform: rotate(-50deg);
+  transform-origin: top left;
+}
+
+.diag-line-left {
+  border: 0;
+  margin: 0;
+  border-left: 5px solid black;
+  height: 110px;
+  margin-left: 50px;
+  transform: rotate(50deg);
+  transform-origin: top left;
+}
+
+.left-circle {
+  top: 50px;
+  left: -80px;
+  position: relative;
 }

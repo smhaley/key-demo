@@ -12,8 +12,8 @@ const Card: React.FC<CardProps> = ({ character }) => {
 
   return (
     <div className="card-container">
-        <h2> {`render count Deep Child: ${renderRef.current}`}</h2>
-      <h2>{character.name}</h2>
+      <h3> {`render count Deep Child: ${renderRef.current}`}</h3>
+      <h3>{character.name}</h3>
       <img src={character.image} alt="rm"></img>
     </div>
   );

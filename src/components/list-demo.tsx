@@ -3,12 +3,12 @@ import React from "react";
 export default function ListDemo() {
   const letters = "abcdefghijklmnopqrstuvwxyz".split("");
 
-  const [list, setList] = React.useState([{ label: "b" }, { label: "a" }]);
-  const [counter, setCounter] = React.useState(1);
+  const [list, setList] = React.useState([{ label: "a" }]);
+  const [counter, setCounter] = React.useState(0);
 
   const handleRemove = () => {
     const count = counter - 1;
-    if (count > 0) {
+    if (count >= 0) {
       const listCopy = [...list];
       listCopy.shift();
       setList(listCopy);
@@ -32,8 +32,12 @@ export default function ListDemo() {
           <h3>Keyed off Index</h3>
           {list.map((item, index) => (
             <div className="list-item" key={index}>
-              {`id: ${index}`}
-              <label className="list-label">{`label: ${item.label} `}</label>
+              <span className="key-item">
+                key: <b>{index}</b>
+              </span>
+              <label className="list-label">
+                label: <b>{item.label}</b>
+              </label>
               <input type="checkbox" />
             </div>
           ))}
@@ -42,8 +46,12 @@ export default function ListDemo() {
           <h3>Keyed off Unique Value</h3>
           {list.map((item) => (
             <div className="list-item" key={item.label}>
-              {`id: ${item.label}`}
-              <label className="list-label">{`label: ${item.label} `}</label>
+              <span className="key-item">
+                key: <b>{item.label}</b>
+              </span>
+              <label className="list-label">
+                label: <b>{item.label}</b>
+              </label>
               <input type="checkbox" />
             </div>
           ))}

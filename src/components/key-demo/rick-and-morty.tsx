@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card";
-
+import Tree from "./tree";
 type Base = {
   name: string;
   url: string;
@@ -26,7 +26,12 @@ interface Cache {
   [key: number]: Character;
 }
 
-const RickAndMorty: React.FC<{ color: string }> = ({ color }) => {
+interface RickAndMortyProps {
+  color: string;
+  rootState: number;
+}
+
+const RickAndMorty: React.FC<RickAndMortyProps> = ({ color, rootState }) => {
   const keys = Array.from({ length: 10 }, (_, i) => i + 1);
 
   const [cache, setCache] = React.useState<Cache>({});
@@ -61,7 +66,7 @@ const RickAndMorty: React.FC<{ color: string }> = ({ color }) => {
   }, []);
 
   return (
-    <div className="demo" style={{ background: color }}>
+    <div className="demo" style={{ background: color, margin: 50 }}>
       <h2> {`render count Child: ${renderRef.current}`}</h2>
       <div className="demo-container">
         <div>{cache[1] && <Card character={cache[page]} />}</div>
@@ -74,10 +79,15 @@ const RickAndMorty: React.FC<{ color: string }> = ({ color }) => {
             >{`page ${item}`}</button>
           ))}
         </div>
-        <div>
+        <div style={{ width: 150 }}>
           <b>Cache: </b>
           {JSON.stringify(Object.values(cache).map((value) => value.name))}
         </div>
+        <Tree
+          child={renderRef.current - 1}
+          deepChild={renderRef.current - 1}
+          root={rootState}
+        />
       </div>
     </div>
   );
