@@ -33,7 +33,7 @@ export const introContent: Content[] = [
             ],
           },
           {
-            text: "Element changes <a> to <div>, <Content/> to <Section/>, etc will cause full rebuild of all nodes below",
+            text: "Element changes such as <a> to <div>, <Content/> to <Section/>, etc will cause a full rebuild of all nodes below",
           },
           {
             text: "Attribute changes on two elements of the same type only update the attribute on the element",
@@ -48,7 +48,9 @@ export const introContent: Content[] = [
       {
         text: "Speed. Virtualization does not require constant DOM repaints. Everything happens in memory first.",
       },
-      {text: 'Simplicity. All DOM changes are grouped into a single render/repaint.'}
+      {
+        text: "Simplicity. All DOM changes are grouped into a single DOM render/repaint.",
+      },
     ],
   },
 ];
@@ -60,7 +62,7 @@ export const keyContent: Content[] = [
     text: "React supports a key prop to track changes between the updated and previous VDOM",
     subContent: [
       {
-        text: "In the context of 'diffing,' a key update counts as an element change triggering an unmount and fresh mount of the element and all nodes below",
+        text: "In the context of diffing, a key update counts as an element change triggering an unmount and fresh mount of the element and all nodes below",
       },
     ],
   },
@@ -74,10 +76,10 @@ export const keyContent: Content[] = [
         text: "To solve for this, React tracks changes to nodes in a list with a key prop ",
       },
       {
-        text: "Key must be locally unique",
+        text: "Keys must be locally unique",
         subContent: [
           {
-            text: "Failure to use a non-unique key may result in unpredictable behavior",
+            text: "Failure to use a non-unique key may result in unpredictable behavior (see bottom example)",
           },
         ],
       },

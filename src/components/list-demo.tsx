@@ -1,4 +1,5 @@
 import React from "react";
+import { ListInstructions } from "./instructions";
 
 export default function ListDemo() {
   const letters = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -27,6 +28,15 @@ export default function ListDemo() {
   return (
     <div className="list-demo-container">
       <h1 className="title">List Example</h1>
+      <ListInstructions />
+      <div className="button-container">
+        <button className="container-button" onClick={handleRemove}>
+          Remove Item
+        </button>
+        <button className="container-button" onClick={handleAdd}>
+          Add Item
+        </button>
+      </div>
       <div className="demo-container">
         <div className="list-container">
           <h3>Keyed off Index</h3>
@@ -55,14 +65,6 @@ export default function ListDemo() {
               <input type="checkbox" />
             </div>
           ))}
-        </div>
-        <div className="button-container">
-          <button className="container-button" onClick={handleRemove}>
-            remove item
-          </button>
-          <button className="container-button" onClick={handleAdd}>
-            add item
-          </button>
         </div>
       </div>
     </div>

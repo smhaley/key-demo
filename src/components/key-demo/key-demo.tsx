@@ -1,6 +1,8 @@
 import React from "react";
 import RickAndMorty from "./rick-and-morty";
 import Tree from "./tree";
+import { KeyInstructions } from "../instructions";
+
 const randomColor = () => {
   let color = "#";
   for (let i = 0; i < 6; i++) {
@@ -38,12 +40,11 @@ export default function KeyDemo() {
   return (
     <div className="demo-key-container">
       <h1 className="title">Key Change Example</h1>
-
+      <KeyInstructions />
       <div className="button-container">
         <button className="container-button" onClick={clickRenderTrackerBump}>
           Update Element Attribute
         </button>
-
         <button className="container-button" onClick={clickRenderTrackerReset}>
           Change Element
         </button>
