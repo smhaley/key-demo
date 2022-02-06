@@ -1,4 +1,5 @@
 import { Character, Cache } from "./components/key-demo/rick-and-morty";
+import rick from './assets/rick.jpeg'
 
 export const one: Character = {
   id: 1,
@@ -15,7 +16,7 @@ export const one: Character = {
     name: "Citadel of Ricks",
     url: "https://rickandmortyapi.com/api/location/3",
   },
-  image: "/assets/rick.jpeg",
+  image: rick,
   episode: [
     "https://rickandmortyapi.com/api/episode/1",
     "https://rickandmortyapi.com/api/episode/2",
