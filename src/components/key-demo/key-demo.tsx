@@ -1,6 +1,5 @@
 import React from "react";
 import RickAndMorty from "./rick-and-morty";
-import Tree from "./tree";
 import { KeyInstructions } from "../instructions";
 
 const randomColor = () => {
