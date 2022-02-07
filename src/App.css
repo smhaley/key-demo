@@ -1,8 +1,9 @@
 .demo-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .button-container {
-  margin-top: 50px;
   padding: 10px;
 }
 
@@ -16,38 +17,35 @@
 }
 
 .list-container {
-  margin: 20px;
+  margin: 0 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-size: 1.2rem;
 }
 
 .list-item {
-  width: 150px;
+  width: 180px;
   display: flex;
-  justify-content: space-between;
 }
 
 .title {
   text-align: center;
 }
 
-.paginate-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 60px;
-  margin-right: 60px;
+.spacer {
+  padding-bottom: 10px;
 }
 
 .paginate-button {
   width: 80px;
-  margin: 5px;;
+  margin: 5px;
   font-size: 1em;
 }
 
 .demo-img {
   height: 100%;
-  width: 400px;
+  width: 300px;
 }
 
 .text-content {
@@ -59,20 +57,122 @@
 }
 
 .app {
-  padding: 50px;
-  margin: auto;
+  margin: 0;
 }
 
 .list-demo-container {
   height: 100vh;
+  padding-top: 100px;
 }
 
 .card-container {
-  margin-left: 50px;
   padding: 10px;
+  border-radius: 4px;
   background-color: deeppink;
 }
 
 .list-label {
-  font-weight: bold;
+  width: 80px;
+}
+
+.key-item {
+  width: 50%;
+}
+
+.demo-key-container {
+  background-color: rgb(202, 225, 230);
+  border-radius: 4px;
+  padding: 50px 0;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.line {
+  border: 0;
+  margin: 0;
+  border-left: 5px solid black;
+  height: 25px;
+  margin-left: 50px;
+}
+
+.diag-line-right {
+  position: absolute;
+  height: 60px;
+  margin-left: 50px;
+  transform: rotate(-50deg);
+  transform-origin: top left;
+}
+
+.diag-line-left {
+  position: absolute;
+  height: 60px;
+  margin-left: 50px;
+  transform: rotate(50deg);
+  transform-origin: top left;
+}
+
+.left-circle {
+  position: relative;
+  top: 20px;
+  left: -60px;
+}
+
+.right-circle {
+  position: relative;
+  top: -82px;
+  left: 65px;
+}
+
+.diagram-container {
+  position: relative;
+}
+
+.diagram-root {
+  width: 170px;
+  margin-left: 100px;
+}
+
+.instruction {
+  padding-left: 40px;
+}
+
+.rm {
+  margin: 0 20px;
+  border-radius: 4px;
+}
+
+.instruction > li {
+  padding: 5px;
+}
+
+.card-img {
+  height: 100%;
+  width: 200px;
+  margin: auto;
+  display: block;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  right: 0;
+  padding: 20px;
+  position: absolute;
 }
