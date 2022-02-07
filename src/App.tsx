@@ -11,10 +11,14 @@ import "./App.css";
 function App() {
   return (
     <div className="app">
-      <Text title={introTitle} content={introContent} />
-      <Text title={keyTitle} content={keyContent} />
-      <KeyDemo />
-      <ListDemo />
+      <div className="container">
+        <Text title={introTitle} content={introContent} />
+        <Text title={keyTitle} content={keyContent} />
+      </div>
+      <div className="container">
+        <KeyDemo />
+        <ListDemo />
+      </div>
     </div>
   );
 }

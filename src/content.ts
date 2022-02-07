@@ -4,14 +4,14 @@ export type Content = {
   subContent?: Content[];
 };
 
-export const introTitle = "VDOM and Reconciliation";
+export const introTitle = "VDOM and Reconciliation Review";
 
 export const introContent: Content[] = [
   {
     text: "React creates a copy of the Browser DOM tree--the virtual DOM.",
     subContent: [
       {
-        text: "Each time data changes within React Elements (props, state), a new VDOM is created",
+        text: "Each time data changes within React Elements (props, state, attributes), a new VDOM is created",
       },
       {
         text: "The new VDOM is compared to the previous through a reconciliation process",
@@ -22,7 +22,7 @@ export const introContent: Content[] = [
         img: "https://media.geeksforgeeks.org/wp-content/uploads/20210622175455/diagram2-300x167.PNG",
         subContent: [
           {
-            text: "Two Assumptions:",
+            text: "Diffing has two Assumptions:",
             subContent: [
               {
                 text: "Two elements of different types will produce different trees.",
@@ -59,7 +59,7 @@ export const keyTitle = "Keys and Lists";
 
 export const keyContent: Content[] = [
   {
-    text: "React supports a key prop to track changes between the updated and previous VDOM",
+    text: "React supports a key prop to track changes between the updated and previous VDOM (Key Change Example) ",
     subContent: [
       {
         text: "In the context of diffing, a key update counts as an element change triggering an unmount and fresh mount of the element and all nodes below",
@@ -67,7 +67,7 @@ export const keyContent: Content[] = [
     ],
   },
   {
-    text: "Lists are are special case for keys in React",
+    text: "Lists are are special case for keys in React (List Example)",
     subContent: [
       {
         text: "Insertions anywhere in a list but the bottom cause React to mutate each item in the entire list",
@@ -79,7 +79,7 @@ export const keyContent: Content[] = [
         text: "Keys must be locally unique",
         subContent: [
           {
-            text: "Failure to use a non-unique key may result in unpredictable behavior (see bottom example)",
+            text: "Failure to use a non-unique key may result in unpredictable behavior",
           },
         ],
       },

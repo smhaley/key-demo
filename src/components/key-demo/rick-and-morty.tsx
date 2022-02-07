@@ -62,15 +62,19 @@ const RickAndMorty: React.FC<RickAndMortyProps> = ({ color, rootState }) => {
   return (
     <div className="demo rm" style={{ background: color }}>
       <h2> {`render count Child: ${renderRef.current}`}</h2>
-      <div className="paginate-container">
+      <div className="spacer">
         {keys.map((item) => (
           <button
-            disabled = {item===page}
+            disabled={item === page}
             key={item}
             className="paginate-button"
             onClick={() => handlePaginate(item)}
           >{`page ${item}`}</button>
         ))}
+      </div>
+      <div className="spacer">
+        <b>Cache: </b>
+        {JSON.stringify(Object.values(cache).map((value) => value.name))}
       </div>
       <div className="demo-container">
         <div>{cache[1] && <Card character={cache[page]} />}</div>
@@ -80,10 +84,6 @@ const RickAndMorty: React.FC<RickAndMortyProps> = ({ color, rootState }) => {
           deepChild={renderRef.current}
           root={rootState}
         />
-      </div>
-      <div>
-        <b>Cache: </b>
-        {JSON.stringify(Object.values(cache).map((value) => value.name))}
       </div>
     </div>
   );
