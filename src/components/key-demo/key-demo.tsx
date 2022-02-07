@@ -17,8 +17,6 @@ export default function KeyDemo() {
   const [key, setKey] = React.useState(1);
 
   const renderRef = React.useRef(1);
-  const renderRefChild = React.useRef(1);
-  const renderRefDeepChild = React.useRef(1);
 
   React.useEffect(() => {
     renderRef.current = renderRef.current + 1;
@@ -26,14 +24,10 @@ export default function KeyDemo() {
 
   const clickRenderTrackerBump = () => {
     setColor(randomColor());
-    renderRefChild.current = renderRefChild.current + 1;
-    renderRefDeepChild.current = renderRefDeepChild.current + 1;
   };
 
   const clickRenderTrackerReset = () => {
     setKey(key + 1);
-    renderRefChild.current = 1;
-    renderRefDeepChild.current = 1;
   };
 
   return (
