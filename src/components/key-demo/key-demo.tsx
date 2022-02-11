@@ -1,5 +1,5 @@
 import React from "react";
-import RickAndMorty from "./rick-and-morty";
+import Child from "./child";
 import { KeyInstructions } from "../instructions";
 
 const randomColor = () => {
@@ -42,8 +42,13 @@ export default function KeyDemo() {
           Change Element
         </button>
         <h2> {`render count Root: ${renderRef.current}`}</h2>
+        <div className="spacer">
+          <b>State: </b>
+          {JSON.stringify({ color: color, key: key })}
+        </div>
       </div>
-      <RickAndMorty color={color} rootState={renderRef.current} key={key} />
+
+      <Child color={color} rootState={renderRef.current} key={key} />
     </div>
   );
 }

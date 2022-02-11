@@ -7,7 +7,7 @@ const Text: React.FC<{ title: string; content: Content[] }> = ({
 }) => {
   const renderList = (contentList: Content[]) => {
     return (
-      <ul>
+      <ul className="text-width">
         {contentList.map((item) => (
           <li key={item.text}>
             <div>

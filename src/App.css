@@ -176,3 +176,7 @@
   padding: 20px;
   position: absolute;
 }
+
+.text-list {
+  max-width: 700px;
+}
