@@ -1,10 +1,10 @@
 import React from "react";
-import { Character } from "./rick-and-morty";
+import { Character } from "./child";
 
-interface CardProps {
+interface DeepChildProps {
   character: Character;
 }
-const Card: React.FC<CardProps> = ({ character }) => {
+const DeepChild: React.FC<DeepChildProps> = ({ character }) => {
   const renderRef = React.useRef(1);
   React.useEffect(() => {
     renderRef.current = renderRef.current + 1;
@@ -13,10 +13,14 @@ const Card: React.FC<CardProps> = ({ character }) => {
   return (
     <div className="card-container">
       <h3> {`render count Deep Child: ${renderRef.current}`}</h3>
+      <div className="spacer">
+        <b>DeepChild Props: </b>
+        {JSON.stringify({ character: character.id })}
+      </div>
       <h3>{character.name}</h3>
         <img className="card-img" src={character.image} alt="rm"></img>
     </div>
   );
 };
 
-export default Card;
+export default DeepChild;

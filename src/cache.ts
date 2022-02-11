@@ -1,4 +1,4 @@
-import { Character, Cache } from "./components/key-demo/rick-and-morty";
+import { Character, Cache } from "./components/key-demo/child";
 import rick from './assets/rick.jpeg'
 
 export const one: Character = {

@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./card";
+import DeepChild from "./deep-child";
 import Tree from "./tree";
 import { cache as initCache } from "../../cache";
 
@@ -27,12 +27,12 @@ export interface Cache {
   [key: number]: Character;
 }
 
-interface RickAndMortyProps {
+interface ChildProps {
   color: string;
   rootState: number;
 }
 
-const RickAndMorty: React.FC<RickAndMortyProps> = ({ color, rootState }) => {
+const Child: React.FC<ChildProps> = ({ color, rootState }) => {
   const keys = Array.from({ length: 4 }, (_, i) => i + 1);
 
   const [cache, setCache] = React.useState<Cache>(initCache);
@@ -42,10 +42,16 @@ const RickAndMorty: React.FC<RickAndMortyProps> = ({ color, rootState }) => {
 
   const getRM = async (key: number) => {
     if (!Object.keys(cache).includes(key.toString())) {
-      const resp = await fetch(
-        `https://rickandmortyapi.com/api/character/${key}`
-      );
-      const out: Character = await resp.json();
+      let out: Character;
+      try {
+        const resp = await fetch(
+          `https://rickandmortyapi.com/api/character/${key}`
+        );
+        if (!resp.ok) throw new Error("server");
+        out = await resp.json();
+      } catch (e) {
+        out = { ...initCache[1], name: "Server Error Rick" };
+      }
       setCache({ ...cache, [key]: out });
     }
   };
@@ -73,11 +79,15 @@ const RickAndMorty: React.FC<RickAndMortyProps> = ({ color, rootState }) => {
         ))}
       </div>
       <div className="spacer">
-        <b>Cache: </b>
+        <b>Child State Cache: </b>
         {JSON.stringify(Object.values(cache).map((value) => value.name))}
       </div>
+      <div className="spacer">
+        <b>Child Props: </b>
+        {JSON.stringify({ color: color })}
+      </div>
       <div className="demo-container">
-        <div>{cache[1] && <Card character={cache[page]} />}</div>
+        <div>{cache[1] && <DeepChild character={cache[page]} />}</div>
 
         <Tree
           child={renderRef.current}
@@ -89,4 +99,4 @@ const RickAndMorty: React.FC<RickAndMortyProps> = ({ color, rootState }) => {
   );
 };
 
-export default RickAndMorty;
+export default Child;
